@@ -6,7 +6,7 @@ public class CashbackHackService {
        public int remain(int amount) {
            int difference = boundary - amount % boundary;
 
-           if (difference == 0) {
+           if (amount % 1000 != 0) {
                System.out.println("Сделайте покупку на " + difference + " руб");
                return difference;
            }
