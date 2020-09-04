@@ -7,14 +7,36 @@ import static org.junit.Assert.*;
 public class CashbackHackServiceTest {
 
     @Test
-    void shouldReturn() {
+    public void shouldReturn100() {
         CashbackHackService service = new CashbackHackService();
-        int amount = 1010;
+        int amount = 900;
 
-        int actual = 10;
-        int expended = service.remain(amount);
+        int actual = 100;
+        int expected = service.remain(amount);
 
-        assertEquals(expended, actual);
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldReturn1000() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1000;
+
+        int actual = 1000;
+        int expected = service.remain(amount);
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldReturn1500() {
+        CashbackHackService service = new CashbackHackService();
+        int amount = 1600;
+
+        int actual = 400;
+        int expected = service.remain(amount);
+
+        assertEquals(actual, expected);
     }
 
 }
